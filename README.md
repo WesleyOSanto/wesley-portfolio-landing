@@ -13,7 +13,10 @@ Landing page estática para concentrar projetos de estudo (SENAC Salto), portfó
 - `src/index.html` – página principal.
 - `src/css/style.css` – estilos.
 - `src/js/main.js` – scripts leves.
-- `public/img/` – imagens (thumbs, avatar, etc.).
+- `src/img/` – imagens usadas pela página (thumbs, avatar, favicon).
+- `public/img/` – cópia de referência das imagens originais (fora do Root Directory usado na Vercel).
+
+> **Nota:** o projeto na Vercel está configurado com **Root Directory = `src`**. Por isso, toda imagem referenciada em `index.html` precisa estar dentro de `src/img/`, não em `public/img/`.
 
 ## Como rodar localmente
 

@@ -2,21 +2,21 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Wesley Oliveira - The Magistro</title>
+  <title>Wesley Oliveira - SENAC Salto</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Landing page de estudos SENAC Salto, portfólio de front-end, UI e animação de Wesley Oliveira." />
-  <link rel="icon" href="../public/favicon.ico" />
+  <meta name="description" content="Portfólio de estudo de Wesley Oliveira, aluno do SENAC Salto -  front-end, UI e animação." />
+  <link rel="icon" href="./favicon.ico" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <div class="nav__logo">The Magistro</div>
+      <div class="nav__logo">Wesley Oliveira <span class="nav__logo-sub">SENAC Salto</span></div>
       <ul class="nav__links">
+        <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#ui-estudos">UI &amp; Animação</a></li>
         <li><a href="#stack">Stack visual</a></li>
-        <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
@@ -46,9 +46,17 @@
         </div>
       </div>
       <div class="hero__visual">
-        <div class="hero__card hero__card--glass">
-          <p class="hero__label">Demo interativo</p>
-          <p class="hero__text">Animações de microinteração, hover e scroll.</p>
+        <div class="hero__card hero__card--glass" id="demoCard">
+          <p class="hero__label">Demo interativo <span class="hero__dot"></span></p>
+          <p class="hero__text">Mova o mouse sobre o card. Ele reage em tempo real.</p>
+          <div class="hero__tags" id="demoTags">
+            <span class="hero__tag is-active" data-tag="hover">Hover</span>
+            <span class="hero__tag" data-tag="scroll">Scroll</span>
+            <span class="hero__tag" data-tag="click">Click</span>
+          </div>
+          <div class="hero__meter">
+            <div class="hero__meter-fill" id="demoMeter"></div>
+          </div>
         </div>
         <div class="hero__aurora"></div>
       </div>
@@ -56,6 +64,28 @@
   </header>
 
   <main>
+    <!-- Sobre -->
+    <section id="sobre" class="section section--about">
+      <div class="about-layout">
+        <div class="about-photo">
+          <img src="./img/avatar-wesley.jpg" alt="Wesley Oliveira, aluno do SENAC Salto" loading="lazy" />
+        </div>
+        <div class="about-text">
+          <p class="hero__badge">Sobre mim</p>
+          <h2>Wesley Oliveira</h2>
+          <p>
+            Designer gráfico e desenvolvedor front-end, com foco em interfaces
+            animadas, UI moderna e experiência do usuário.
+          </p>
+          <p>
+            Esta landing faz parte do meu portfólio de estudo como aluno do SENAC
+            Salto, integrando projetos gráficos, protótipos de interface e demos
+            interativos usando HTML, CSS e JavaScript.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Projetos Behance -->
     <section id="projetos" class="section section--projects">
       <div class="section__header">
@@ -65,7 +95,9 @@
 
       <div class="projects-grid">
         <article class="project-card">
-          <div class="project-card__thumb"></div>
+          <div class="project-card__thumb project-card__thumb--contain">
+            <img src="./img/thumb-urua.jpg" alt="Logotipo Uruá - Tintura Natural de Urucum" loading="lazy" />
+          </div>
           <div class="project-card__body">
             <h3 class="project-card__title">Uruá Titura Natural – Produtos de Maquiagem</h3>
             <p class="project-card__category">Embalagem - Identidade visual</p>
@@ -82,7 +114,9 @@
         </article>
 
         <article class="project-card">
-          <div class="project-card__thumb project-card__thumb--alt"></div>
+          <div class="project-card__thumb project-card__thumb--alt">
+            <img src="./img/thumb-contracolonizacao.jpg" alt="Capa do livro Contracolonização e Cosmofobia" loading="lazy" />
+          </div>
           <div class="project-card__body">
             <h3 class="project-card__title">Contracolonização e Cosmofobia – Releitura de Livro</h3>
             <p class="project-card__category">Editorial - Projeto gráfico</p>
@@ -176,30 +210,6 @@
       </div>
     </section>
 
-    <!-- Sobre -->
-    <section id="sobre" class="section section--about">
-      <div class="section__header">
-        <h2>Sobre Wesley Oliveira</h2>
-      </div>
-      <div class="about-layout">
-        <div class="about-text">
-          <p>
-            Olá, sou Wesley Oliveira – designer gráfico e desenvolvedor front-end,
-            com foco em interfaces animadas, UI moderna e experiência do usuário.
-          </p>
-          <p>
-            Esta landing faz parte do meu portfólio de estudo como aluno do SENAC
-            Salto, integrando projetos gráficos, protótipos de interface e demos
-            interativos usando HTML, CSS, JavaScript e React.
-          </p>
-          <p>
-            Meu objetivo é criar páginas que conectam narrativa visual, animação
-            e clareza, tanto para portfólios quanto para produtos digitais.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- Contato -->
     <section id="contato" class="section section--contact">
       <div class="section__header">
@@ -230,7 +240,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 Wesley Oliveira - The Magistro. Estudos SENAC Salto.</p>
+    <p>© 2026 Wesley Oliveira. Portfólio de estudo -  SENAC Salto.</p>
   </footer>
 
   <script src="./js/main.js"></script>
