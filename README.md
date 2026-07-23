@@ -1,29 +1,56 @@
-# Landing – Wesley Oliveira / The Magistro
+# Studio Pixel — Wesley Oliveira
 
-Landing page estática para concentrar projetos de estudo (SENAC Salto), portfólio Behance e demos de UI/animação.
+Portfólio de estudo (SENAC Salto) reconstruído em Next.js, aplicando a identidade visual
+**Studio Pixel** (wordmark em pixel art, paleta extraída da arte da marca, mascote e
+aplicações reais em produto) e um background WebGL animado (ColorBends, do React Bits).
 
 ## Stack
 
-- HTML + CSS + JavaScript (sem build).
-- Visual inspirado em React Bits, Animata e KokonutUI.
-- Deploy estático na Vercel.
+- **Next.js 15** (App Router) + React 18
+- **Three.js** — shader WebGL do background animado da hero (`ColorBends`)
+- CSS puro (sem Tailwind), com variáveis de tema baseadas na paleta Studio Pixel
+- Deploy na Vercel (build automático via `npm run build`)
 
 ## Estrutura
 
-- `src/index.html` – página principal.
-- `src/css/style.css` – estilos.
-- `src/js/main.js` – scripts leves.
-- `src/img/` – imagens usadas pela página (thumbs, avatar, favicon).
-- `public/img/` – cópia de referência das imagens originais (fora do Root Directory usado na Vercel).
+```
+studio-pixel/
+  app/
+    layout.js       — layout raiz + metadata
+    page.js          — monta todas as seções
+    globals.css       — design system completo (cores, tipografia, componentes)
+  components/
+    ColorBends.jsx/.css  — background WebGL (adaptado do React Bits, MIT + Commons Clause)
+    PixelMark.jsx         — wordmark "studio PIXEL" reutilizável
+    Nav.jsx, Hero.jsx, About.jsx, Projects.jsx, BrandApplications.jsx,
+    UIStudies.jsx, Stack.jsx, Contact.jsx, Footer.jsx, ScrollReveal.jsx
+  public/img/       — fotos, mockups da marca e capas de projeto
+```
 
-> **Nota:** o projeto na Vercel está configurado com **Root Directory = `src`**. Por isso, toda imagem referenciada em `index.html` precisa estar dentro de `src/img/`, não em `public/img/`.
+## Rodar localmente
 
-## Como rodar localmente
+Requer Node.js 18+.
 
-Abra `src/index.html` direto no navegador ou sirva com qualquer servidor estático.
+```bash
+npm install
+npm run dev
+```
+
+Acesse `http://localhost:3000`.
 
 ## Deploy na Vercel
 
-1. Crie um repositório no GitHub com esta estrutura.
-2. Conecte o repositório na Vercel.
-3. Configure a Vercel para servir `src/index.html` como página principal.
+1. Suba este repositório no GitHub.
+2. Importe o repositório em [vercel.com/new](https://vercel.com/new).
+3. **Framework Preset:** Next.js (detectado automaticamente).
+4. **Root Directory:** raiz do repositório (não use subpasta `src`, diferente da versão
+   estática anterior).
+5. Não é necessário configurar Build/Output Command — a Vercel já sabe rodar `next build`.
+6. Deploy. A Vercel instala as dependências e builda o projeto nos servidores dela — nada
+   disso roda na sua máquina.
+
+## Créditos
+
+O componente `ColorBends` é adaptado do [React Bits](https://reactbits.dev) (David Haz),
+licenciado sob MIT + Commons Clause — uso permitido dentro de um site/produto, mas não pode
+ser redistribuído como biblioteca separada.
